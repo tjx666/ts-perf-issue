@@ -174,7 +174,7 @@ export const createMuiTheme = createTheme as unknown as (
   "typescript.implementationsCodeLens.enabled": false,
   "typescript.referencesCodeLens.enabled": false,
 
-  // theme modules contain many useless types especially aws-sdk
+  // some modules contain many useless types especially aws-sdk, will make auto complete list very long and slow
   "typescript.preferences.autoImportFileExcludePatterns": [
     "node_modules/@iconify-json",
     "node_modules/@@google-cloud",
@@ -194,6 +194,8 @@ recommend extensions:
 
 - [zardoy.ts-essential-plugins](https://marketplace.visualstudio.com/items?itemName=zardoy.ts-essential-plugins)
 - [tsperf.tracer](https://marketplace.visualstudio.com/items?itemName=tsperf.tracer)
+
+extension [MylesMurphy.prettify-ts](https://marketplace.visualstudio.com/items?itemName=MylesMurphy.prettify-ts) maybe make ts slow.
 
 ```jsonc
 // my personal settings
@@ -276,7 +278,6 @@ recommend extensions:
         ],
       },
     ],
-
 }
 ```
 
