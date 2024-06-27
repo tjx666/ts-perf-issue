@@ -3,29 +3,42 @@
 > tsc -p . --generateTrace ./dist/ts-trace --incremental false && analyze-trace ./dist/ts-trace
 
 Hot Spots
-├─ Check file [35m/users/yutengjing/code/ts-perf-issue/src/[36mcreatetheme.tsx[39m[35m[39m (1619ms)
-│  └─ Check variable declaration from (line 10, char 11) to (line 10, char 45) (1615ms)
-│     └─ Check expression from (line 10, char 19) to (line 10, char 45) (1615ms)
-│        └─ Compare types 1617 and 25165 (1614ms)
-│           └─ Compare types 25215 and 25213 (1611ms)
-│              └─ Compare types 25214 and 25212 (1611ms)
-│                 └─ Determine variance of type 85 (1610ms)
-│                    └─ Compare types 25217 and 25216 (1575ms)
-│                       └─ Compare types 25223 and 25221 (1575ms)
-│                          └─ Compare types 25222 and 25220 (1575ms)
-│                             └─ Compare types 25354 and 25343 (1574ms)
-│                                └─ Compare types 25352 and 25341 (1574ms)
-│                                   └─ Compare types 25350 and 25339 (1573ms)
-│                                      └─ Determine variance of type 25274 (1572ms)
-│                                         └─ Compare types 25383 and 25375 (1422ms)
-│                                            └─ Compare types 25382 and 25374 (1422ms)
-│                                               └─ Compare types 25379 and 25371 (1417ms)
-│                                                  └─ Compare types 25370 and 25378 (891ms)
-│                                                     └─ Compare types 25370 and 25377 (891ms)
-│                                                        └─ Compare types 25369 and 25377 (891ms)
-│                                                           └─ Compare types 25432 and 25427 (891ms)
-│                                                              └─ Compare types 25432 and 25425 (891ms)
-│                                                                 └─ Compare types 25430 and 25425 (891ms)
+├─ Check file [35m/users/yutengjing/code/ts-perf-issue/src/[36mdifferentversionofmuisystem.tsx[39m[35m[39m (9778ms)
+│  └─ Check deferred node from (line 10, char 12) to (line 10, char 61) (9775ms)
+│     └─ Compare types 49548 and 49541 (9751ms)
+│        └─ Compare types 1629 and 49441 (8943ms)
+│           └─ Compare types 1620 and 49441 (8864ms)
+│              └─ Compare types 1620 and 49414 (8864ms)
+│                 ├─ {"id":1620,"kind":"GenericTypeAlias","name":"SystemCssProperties","aliasTypeArguments":[1617],"location":{"path":"[35m/users/yutengjing/code/ts-perf-issue/node_modules/[36m.pnpm[39m[35m/@mui+system@5.15.20_@types+react@18.3.3_react@18.3.1/node_modules/[36m@mui/system[39m[35m/stylefunctionsx/stylefunctionsx.d.ts[39m","line":50,"char":1}}
+│                 │  └─ {"id":1617,"kind":"Object","name":"Theme","location":{"path":"[35m/users/yutengjing/code/ts-perf-issue/node_modules/[36m.pnpm[39m[35m/@mui+material@5.15.20_@types+react@18.3.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/[36m@mui/material[39m[35m/styles/createtheme.d.ts[39m","line":44,"char":1}}
+│                 └─ {"id":49414,"kind":"Intersection","count":2,"types":[49403,1620]}
+│                    ├─ {"id":49403,"kind":"GenericTypeAlias","name":"SystemCssProperties","aliasTypeArguments":[1617],"location":{"path":"[35m/users/yutengjing/code/ts-perf-issue/node_modules/[36m.pnpm[39m[35m/@mui+system@5.15.15_@types+react@18.3.3_react@18.3.1/node_modules/[36m@mui/system[39m[35m/stylefunctionsx/stylefunctionsx.d.ts[39m","line":50,"char":1}}
+│                    │  └─ {"id":1617,"kind":"Object","name":"Theme","location":{"path":"[35m/users/yutengjing/code/ts-perf-issue/node_modules/[36m.pnpm[39m[35m/@mui+material@5.15.20_@types+react@18.3.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/[36m@mui/material[39m[35m/styles/createtheme.d.ts[39m","line":44,"char":1}}
+│                    └─ {"id":1620,"kind":"GenericTypeAlias","name":"SystemCssProperties","aliasTypeArguments":[1617],"location":{"path":"[35m/users/yutengjing/code/ts-perf-issue/node_modules/[36m.pnpm[39m[35m/@mui+system@5.15.20_@types+react@18.3.3_react@18.3.1/node_modules/[36m@mui/system[39m[35m/stylefunctionsx/stylefunctionsx.d.ts[39m","line":50,"char":1}}
+│                       └─ {"id":1617,"kind":"Object","name":"Theme","location":{"path":"[35m/users/yutengjing/code/ts-perf-issue/node_modules/[36m.pnpm[39m[35m/@mui+material@5.15.20_@types+react@18.3.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/[36m@mui/material[39m[35m/styles/createtheme.d.ts[39m","line":44,"char":1}}
+├─ Check file [35m/users/yutengjing/code/ts-perf-issue/src/[36mcreatetheme.tsx[39m[35m[39m (1732ms)
+│  └─ Check variable declaration from (line 10, char 11) to (line 10, char 45) (1728ms)
+│     └─ Check expression from (line 10, char 19) to (line 10, char 45) (1728ms)
+│        └─ Compare types 1617 and 25165 (1727ms)
+│           └─ Compare types 25215 and 25213 (1725ms)
+│              └─ Compare types 25214 and 25212 (1725ms)
+│                 └─ Determine variance of type 85 (1721ms)
+│                    └─ Compare types 25217 and 25216 (1686ms)
+│                       └─ Compare types 25223 and 25221 (1686ms)
+│                          └─ Compare types 25222 and 25220 (1686ms)
+│                             └─ Compare types 25354 and 25343 (1684ms)
+│                                └─ Compare types 25352 and 25341 (1684ms)
+│                                   └─ Compare types 25350 and 25339 (1684ms)
+│                                      └─ Determine variance of type 25274 (1682ms)
+│                                         └─ Compare types 25383 and 25375 (1527ms)
+│                                            └─ Compare types 25382 and 25374 (1527ms)
+│                                               └─ Compare types 25379 and 25371 (1522ms)
+│                                                  └─ Compare types 25370 and 25378 (876ms)
+│                                                     └─ Compare types 25370 and 25377 (876ms)
+│                                                        └─ Compare types 25369 and 25377 (876ms)
+│                                                           └─ Compare types 25432 and 25427 (876ms)
+│                                                              └─ Compare types 25432 and 25425 (876ms)
+│                                                                 └─ Compare types 25430 and 25425 (876ms)
 │                                                                    ├─ {"id":25430,"kind":"IndexedAccess","indexedAccessObjectType":93,"indexedAccessIndexType":25429}
 │                                                                    │  ├─ {"id":93,"kind":"Object","name":"ComponentsPropsList","location":{"path":"[35m/users/yutengjing/code/ts-perf-issue/node_modules/[36m.pnpm[39m[35m/@mui+material@5.15.20_@types+react@18.3.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/[36m@mui/material[39m[35m/styles/props.d.ts[39m","line":125,"char":1}}
 │                                                                    │  └─ {"id":25429,"kind":"SubstitutionType","originalType":45,"constraintType":213}
@@ -274,7 +287,10 @@ Hot Spots
 │                                                                             ├─ {"id":210,"kind":"StringLiteral","value":"\"MuiTouchRipple\""}
 │                                                                             ├─ {"id":211,"kind":"StringLiteral","value":"\"MuiTypography\""}
 │                                                                             └─ {"id":212,"kind":"StringLiteral","value":"\"MuiUseMediaQuery\""}
-└─ Check file [35m/users/yutengjing/code/ts-perf-issue/src/[36msxprops.tsx[39m[35m[39m (538ms)
-   └─ Check deferred node from (line 11, char 9) to (line 18, char 18) (528ms)
+└─ Check file [35m/users/yutengjing/code/ts-perf-issue/src/[36msxprops.tsx[39m[35m[39m (566ms)
+   └─ Check deferred node from (line 11, char 9) to (line 18, char 18) (556ms)
 
-No duplicate packages found
+Duplicate packages
+└─ @mui/system
+   ├─ Version 5.15.15 from /Users/yutengjing/code/ts-perf-issue/node_modules/.pnpm/@mui+system@5.15.15_@types+react@18.3.3_react@18.3.1/node_modules/@mui/system
+   └─ Version 5.15.20 from /Users/yutengjing/code/ts-perf-issue/node_modules/.pnpm/@mui+system@5.15.20_@types+react@18.3.3_react@18.3.1/node_modules/@mui/system
