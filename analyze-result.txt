@@ -1,0 +1,280 @@
+
+> ts-perf-issue@1.0.0 analyze-ts /Users/yutengjing/code/ts-perf-issue
+> tsc -p . --generateTrace ./dist/ts-trace --incremental false && analyze-trace ./dist/ts-trace
+
+Hot Spots
+├─ Check file [35m/users/yutengjing/code/ts-perf-issue/src/[36mcreatetheme.tsx[39m[35m[39m (1619ms)
+│  └─ Check variable declaration from (line 10, char 11) to (line 10, char 45) (1615ms)
+│     └─ Check expression from (line 10, char 19) to (line 10, char 45) (1615ms)
+│        └─ Compare types 1617 and 25165 (1614ms)
+│           └─ Compare types 25215 and 25213 (1611ms)
+│              └─ Compare types 25214 and 25212 (1611ms)
+│                 └─ Determine variance of type 85 (1610ms)
+│                    └─ Compare types 25217 and 25216 (1575ms)
+│                       └─ Compare types 25223 and 25221 (1575ms)
+│                          └─ Compare types 25222 and 25220 (1575ms)
+│                             └─ Compare types 25354 and 25343 (1574ms)
+│                                └─ Compare types 25352 and 25341 (1574ms)
+│                                   └─ Compare types 25350 and 25339 (1573ms)
+│                                      └─ Determine variance of type 25274 (1572ms)
+│                                         └─ Compare types 25383 and 25375 (1422ms)
+│                                            └─ Compare types 25382 and 25374 (1422ms)
+│                                               └─ Compare types 25379 and 25371 (1417ms)
+│                                                  └─ Compare types 25370 and 25378 (891ms)
+│                                                     └─ Compare types 25370 and 25377 (891ms)
+│                                                        └─ Compare types 25369 and 25377 (891ms)
+│                                                           └─ Compare types 25432 and 25427 (891ms)
+│                                                              └─ Compare types 25432 and 25425 (891ms)
+│                                                                 └─ Compare types 25430 and 25425 (891ms)
+│                                                                    ├─ {"id":25430,"kind":"IndexedAccess","indexedAccessObjectType":93,"indexedAccessIndexType":25429}
+│                                                                    │  ├─ {"id":93,"kind":"Object","name":"ComponentsPropsList","location":{"path":"[35m/users/yutengjing/code/ts-perf-issue/node_modules/[36m.pnpm[39m[35m/@mui+material@5.15.20_@types+react@18.3.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/[36m@mui/material[39m[35m/styles/props.d.ts[39m","line":125,"char":1}}
+│                                                                    │  └─ {"id":25429,"kind":"SubstitutionType","originalType":45,"constraintType":213}
+│                                                                    │     ├─ {"id":45,"kind":"TypeParameter"}
+│                                                                    │     └─ {"id":213,"kind":"Union","count":119,"types":[94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212]}
+│                                                                    │        ├─ {"id":94,"kind":"StringLiteral","value":"\"MuiAlert\""}
+│                                                                    │        ├─ {"id":95,"kind":"StringLiteral","value":"\"MuiAlertTitle\""}
+│                                                                    │        ├─ {"id":96,"kind":"StringLiteral","value":"\"MuiAppBar\""}
+│                                                                    │        ├─ {"id":97,"kind":"StringLiteral","value":"\"MuiAutocomplete\""}
+│                                                                    │        ├─ {"id":98,"kind":"StringLiteral","value":"\"MuiAvatar\""}
+│                                                                    │        ├─ {"id":99,"kind":"StringLiteral","value":"\"MuiAvatarGroup\""}
+│                                                                    │        ├─ {"id":100,"kind":"StringLiteral","value":"\"MuiBackdrop\""}
+│                                                                    │        ├─ {"id":101,"kind":"StringLiteral","value":"\"MuiBadge\""}
+│                                                                    │        ├─ {"id":102,"kind":"StringLiteral","value":"\"MuiBottomNavigation\""}
+│                                                                    │        ├─ {"id":103,"kind":"StringLiteral","value":"\"MuiBottomNavigationAction\""}
+│                                                                    │        ├─ {"id":104,"kind":"StringLiteral","value":"\"MuiBreadcrumbs\""}
+│                                                                    │        ├─ {"id":105,"kind":"StringLiteral","value":"\"MuiButton\""}
+│                                                                    │        ├─ {"id":106,"kind":"StringLiteral","value":"\"MuiButtonBase\""}
+│                                                                    │        ├─ {"id":107,"kind":"StringLiteral","value":"\"MuiButtonGroup\""}
+│                                                                    │        ├─ {"id":108,"kind":"StringLiteral","value":"\"MuiCard\""}
+│                                                                    │        ├─ {"id":109,"kind":"StringLiteral","value":"\"MuiCardActionArea\""}
+│                                                                    │        ├─ {"id":110,"kind":"StringLiteral","value":"\"MuiCardActions\""}
+│                                                                    │        ├─ {"id":111,"kind":"StringLiteral","value":"\"MuiCardContent\""}
+│                                                                    │        ├─ {"id":112,"kind":"StringLiteral","value":"\"MuiCardHeader\""}
+│                                                                    │        ├─ {"id":113,"kind":"StringLiteral","value":"\"MuiCardMedia\""}
+│                                                                    │        ├─ {"id":114,"kind":"StringLiteral","value":"\"MuiCheckbox\""}
+│                                                                    │        ├─ {"id":115,"kind":"StringLiteral","value":"\"MuiChip\""}
+│                                                                    │        ├─ {"id":116,"kind":"StringLiteral","value":"\"MuiCircularProgress\""}
+│                                                                    │        ├─ {"id":117,"kind":"StringLiteral","value":"\"MuiCollapse\""}
+│                                                                    │        ├─ {"id":118,"kind":"StringLiteral","value":"\"MuiContainer\""}
+│                                                                    │        ├─ {"id":119,"kind":"StringLiteral","value":"\"MuiCssBaseline\""}
+│                                                                    │        ├─ {"id":120,"kind":"StringLiteral","value":"\"MuiDialog\""}
+│                                                                    │        ├─ {"id":121,"kind":"StringLiteral","value":"\"MuiDialogActions\""}
+│                                                                    │        ├─ {"id":122,"kind":"StringLiteral","value":"\"MuiDialogContent\""}
+│                                                                    │        ├─ {"id":123,"kind":"StringLiteral","value":"\"MuiDialogContentText\""}
+│                                                                    │        ├─ {"id":124,"kind":"StringLiteral","value":"\"MuiDialogTitle\""}
+│                                                                    │        ├─ {"id":125,"kind":"StringLiteral","value":"\"MuiDivider\""}
+│                                                                    │        ├─ {"id":126,"kind":"StringLiteral","value":"\"MuiDrawer\""}
+│                                                                    │        ├─ {"id":127,"kind":"StringLiteral","value":"\"MuiAccordion\""}
+│                                                                    │        ├─ {"id":128,"kind":"StringLiteral","value":"\"MuiAccordionActions\""}
+│                                                                    │        ├─ {"id":129,"kind":"StringLiteral","value":"\"MuiAccordionDetails\""}
+│                                                                    │        ├─ {"id":130,"kind":"StringLiteral","value":"\"MuiAccordionSummary\""}
+│                                                                    │        ├─ {"id":131,"kind":"StringLiteral","value":"\"MuiFab\""}
+│                                                                    │        ├─ {"id":132,"kind":"StringLiteral","value":"\"MuiFilledInput\""}
+│                                                                    │        ├─ {"id":133,"kind":"StringLiteral","value":"\"MuiFormControl\""}
+│                                                                    │        ├─ {"id":134,"kind":"StringLiteral","value":"\"MuiFormControlLabel\""}
+│                                                                    │        ├─ {"id":135,"kind":"StringLiteral","value":"\"MuiFormGroup\""}
+│                                                                    │        ├─ {"id":136,"kind":"StringLiteral","value":"\"MuiFormHelperText\""}
+│                                                                    │        ├─ {"id":137,"kind":"StringLiteral","value":"\"MuiFormLabel\""}
+│                                                                    │        ├─ {"id":138,"kind":"StringLiteral","value":"\"MuiGrid\""}
+│                                                                    │        ├─ {"id":139,"kind":"StringLiteral","value":"\"MuiGrid2\""}
+│                                                                    │        ├─ {"id":140,"kind":"StringLiteral","value":"\"MuiImageList\""}
+│                                                                    │        ├─ {"id":141,"kind":"StringLiteral","value":"\"MuiImageListItem\""}
+│                                                                    │        ├─ {"id":142,"kind":"StringLiteral","value":"\"MuiImageListItemBar\""}
+│                                                                    │        ├─ {"id":143,"kind":"StringLiteral","value":"\"MuiIcon\""}
+│                                                                    │        ├─ {"id":144,"kind":"StringLiteral","value":"\"MuiIconButton\""}
+│                                                                    │        ├─ {"id":145,"kind":"StringLiteral","value":"\"MuiInput\""}
+│                                                                    │        ├─ {"id":146,"kind":"StringLiteral","value":"\"MuiInputAdornment\""}
+│                                                                    │        ├─ {"id":147,"kind":"StringLiteral","value":"\"MuiInputBase\""}
+│                                                                    │        ├─ {"id":148,"kind":"StringLiteral","value":"\"MuiInputLabel\""}
+│                                                                    │        ├─ {"id":149,"kind":"StringLiteral","value":"\"MuiLinearProgress\""}
+│                                                                    │        ├─ {"id":150,"kind":"StringLiteral","value":"\"MuiLink\""}
+│                                                                    │        ├─ {"id":151,"kind":"StringLiteral","value":"\"MuiList\""}
+│                                                                    │        ├─ {"id":152,"kind":"StringLiteral","value":"\"MuiListItem\""}
+│                                                                    │        ├─ {"id":153,"kind":"StringLiteral","value":"\"MuiListItemButton\""}
+│                                                                    │        ├─ {"id":154,"kind":"StringLiteral","value":"\"MuiListItemAvatar\""}
+│                                                                    │        ├─ {"id":155,"kind":"StringLiteral","value":"\"MuiListItemIcon\""}
+│                                                                    │        ├─ {"id":156,"kind":"StringLiteral","value":"\"MuiListItemSecondaryAction\""}
+│                                                                    │        ├─ {"id":157,"kind":"StringLiteral","value":"\"MuiListItemText\""}
+│                                                                    │        ├─ {"id":158,"kind":"StringLiteral","value":"\"MuiListSubheader\""}
+│                                                                    │        ├─ {"id":159,"kind":"StringLiteral","value":"\"MuiMenu\""}
+│                                                                    │        ├─ {"id":160,"kind":"StringLiteral","value":"\"MuiMenuItem\""}
+│                                                                    │        ├─ {"id":161,"kind":"StringLiteral","value":"\"MuiMenuList\""}
+│                                                                    │        ├─ {"id":162,"kind":"StringLiteral","value":"\"MuiMobileStepper\""}
+│                                                                    │        ├─ {"id":163,"kind":"StringLiteral","value":"\"MuiModal\""}
+│                                                                    │        ├─ {"id":164,"kind":"StringLiteral","value":"\"MuiNativeSelect\""}
+│                                                                    │        ├─ {"id":165,"kind":"StringLiteral","value":"\"MuiOutlinedInput\""}
+│                                                                    │        ├─ {"id":166,"kind":"StringLiteral","value":"\"MuiPagination\""}
+│                                                                    │        ├─ {"id":167,"kind":"StringLiteral","value":"\"MuiPaginationItem\""}
+│                                                                    │        ├─ {"id":168,"kind":"StringLiteral","value":"\"MuiPaper\""}
+│                                                                    │        ├─ {"id":169,"kind":"StringLiteral","value":"\"MuiPopper\""}
+│                                                                    │        ├─ {"id":170,"kind":"StringLiteral","value":"\"MuiPopover\""}
+│                                                                    │        ├─ {"id":171,"kind":"StringLiteral","value":"\"MuiRadio\""}
+│                                                                    │        ├─ {"id":172,"kind":"StringLiteral","value":"\"MuiRadioGroup\""}
+│                                                                    │        ├─ {"id":173,"kind":"StringLiteral","value":"\"MuiRating\""}
+│                                                                    │        ├─ {"id":174,"kind":"StringLiteral","value":"\"MuiScopedCssBaseline\""}
+│                                                                    │        ├─ {"id":175,"kind":"StringLiteral","value":"\"MuiSelect\""}
+│                                                                    │        ├─ {"id":176,"kind":"StringLiteral","value":"\"MuiSkeleton\""}
+│                                                                    │        ├─ {"id":177,"kind":"StringLiteral","value":"\"MuiSlider\""}
+│                                                                    │        ├─ {"id":178,"kind":"StringLiteral","value":"\"MuiSnackbar\""}
+│                                                                    │        ├─ {"id":179,"kind":"StringLiteral","value":"\"MuiSnackbarContent\""}
+│                                                                    │        ├─ {"id":180,"kind":"StringLiteral","value":"\"MuiSpeedDial\""}
+│                                                                    │        ├─ {"id":181,"kind":"StringLiteral","value":"\"MuiSpeedDialAction\""}
+│                                                                    │        ├─ {"id":182,"kind":"StringLiteral","value":"\"MuiSpeedDialIcon\""}
+│                                                                    │        ├─ {"id":183,"kind":"StringLiteral","value":"\"MuiStack\""}
+│                                                                    │        ├─ {"id":184,"kind":"StringLiteral","value":"\"MuiStep\""}
+│                                                                    │        ├─ {"id":185,"kind":"StringLiteral","value":"\"MuiStepButton\""}
+│                                                                    │        ├─ {"id":186,"kind":"StringLiteral","value":"\"MuiStepConnector\""}
+│                                                                    │        ├─ {"id":187,"kind":"StringLiteral","value":"\"MuiStepContent\""}
+│                                                                    │        ├─ {"id":188,"kind":"StringLiteral","value":"\"MuiStepIcon\""}
+│                                                                    │        ├─ {"id":189,"kind":"StringLiteral","value":"\"MuiStepLabel\""}
+│                                                                    │        ├─ {"id":190,"kind":"StringLiteral","value":"\"MuiStepper\""}
+│                                                                    │        ├─ {"id":191,"kind":"StringLiteral","value":"\"MuiSvgIcon\""}
+│                                                                    │        ├─ {"id":192,"kind":"StringLiteral","value":"\"MuiSwipeableDrawer\""}
+│                                                                    │        ├─ {"id":193,"kind":"StringLiteral","value":"\"MuiSwitch\""}
+│                                                                    │        ├─ {"id":194,"kind":"StringLiteral","value":"\"MuiTab\""}
+│                                                                    │        ├─ {"id":195,"kind":"StringLiteral","value":"\"MuiTable\""}
+│                                                                    │        ├─ {"id":196,"kind":"StringLiteral","value":"\"MuiTableBody\""}
+│                                                                    │        ├─ {"id":197,"kind":"StringLiteral","value":"\"MuiTableCell\""}
+│                                                                    │        ├─ {"id":198,"kind":"StringLiteral","value":"\"MuiTableContainer\""}
+│                                                                    │        ├─ {"id":199,"kind":"StringLiteral","value":"\"MuiTableFooter\""}
+│                                                                    │        ├─ {"id":200,"kind":"StringLiteral","value":"\"MuiTableHead\""}
+│                                                                    │        ├─ {"id":201,"kind":"StringLiteral","value":"\"MuiTablePagination\""}
+│                                                                    │        ├─ {"id":202,"kind":"StringLiteral","value":"\"MuiTableRow\""}
+│                                                                    │        ├─ {"id":203,"kind":"StringLiteral","value":"\"MuiTableSortLabel\""}
+│                                                                    │        ├─ {"id":204,"kind":"StringLiteral","value":"\"MuiTabs\""}
+│                                                                    │        ├─ {"id":205,"kind":"StringLiteral","value":"\"MuiTextField\""}
+│                                                                    │        ├─ {"id":206,"kind":"StringLiteral","value":"\"MuiToggleButton\""}
+│                                                                    │        ├─ {"id":207,"kind":"StringLiteral","value":"\"MuiToggleButtonGroup\""}
+│                                                                    │        ├─ {"id":208,"kind":"StringLiteral","value":"\"MuiToolbar\""}
+│                                                                    │        ├─ {"id":209,"kind":"StringLiteral","value":"\"MuiTooltip\""}
+│                                                                    │        ├─ {"id":210,"kind":"StringLiteral","value":"\"MuiTouchRipple\""}
+│                                                                    │        ├─ {"id":211,"kind":"StringLiteral","value":"\"MuiTypography\""}
+│                                                                    │        └─ {"id":212,"kind":"StringLiteral","value":"\"MuiUseMediaQuery\""}
+│                                                                    └─ {"id":25425,"kind":"IndexedAccess","indexedAccessObjectType":93,"indexedAccessIndexType":25424}
+│                                                                       ├─ {"id":93,"kind":"Object","name":"ComponentsPropsList","location":{"path":"[35m/users/yutengjing/code/ts-perf-issue/node_modules/[36m.pnpm[39m[35m/@mui+material@5.15.20_@types+react@18.3.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/[36m@mui/material[39m[35m/styles/props.d.ts[39m","line":125,"char":1}}
+│                                                                       └─ {"id":25424,"kind":"SubstitutionType","originalType":46,"constraintType":213}
+│                                                                          ├─ {"id":46,"kind":"TypeParameter"}
+│                                                                          └─ {"id":213,"kind":"Union","count":119,"types":[94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212]}
+│                                                                             ├─ {"id":94,"kind":"StringLiteral","value":"\"MuiAlert\""}
+│                                                                             ├─ {"id":95,"kind":"StringLiteral","value":"\"MuiAlertTitle\""}
+│                                                                             ├─ {"id":96,"kind":"StringLiteral","value":"\"MuiAppBar\""}
+│                                                                             ├─ {"id":97,"kind":"StringLiteral","value":"\"MuiAutocomplete\""}
+│                                                                             ├─ {"id":98,"kind":"StringLiteral","value":"\"MuiAvatar\""}
+│                                                                             ├─ {"id":99,"kind":"StringLiteral","value":"\"MuiAvatarGroup\""}
+│                                                                             ├─ {"id":100,"kind":"StringLiteral","value":"\"MuiBackdrop\""}
+│                                                                             ├─ {"id":101,"kind":"StringLiteral","value":"\"MuiBadge\""}
+│                                                                             ├─ {"id":102,"kind":"StringLiteral","value":"\"MuiBottomNavigation\""}
+│                                                                             ├─ {"id":103,"kind":"StringLiteral","value":"\"MuiBottomNavigationAction\""}
+│                                                                             ├─ {"id":104,"kind":"StringLiteral","value":"\"MuiBreadcrumbs\""}
+│                                                                             ├─ {"id":105,"kind":"StringLiteral","value":"\"MuiButton\""}
+│                                                                             ├─ {"id":106,"kind":"StringLiteral","value":"\"MuiButtonBase\""}
+│                                                                             ├─ {"id":107,"kind":"StringLiteral","value":"\"MuiButtonGroup\""}
+│                                                                             ├─ {"id":108,"kind":"StringLiteral","value":"\"MuiCard\""}
+│                                                                             ├─ {"id":109,"kind":"StringLiteral","value":"\"MuiCardActionArea\""}
+│                                                                             ├─ {"id":110,"kind":"StringLiteral","value":"\"MuiCardActions\""}
+│                                                                             ├─ {"id":111,"kind":"StringLiteral","value":"\"MuiCardContent\""}
+│                                                                             ├─ {"id":112,"kind":"StringLiteral","value":"\"MuiCardHeader\""}
+│                                                                             ├─ {"id":113,"kind":"StringLiteral","value":"\"MuiCardMedia\""}
+│                                                                             ├─ {"id":114,"kind":"StringLiteral","value":"\"MuiCheckbox\""}
+│                                                                             ├─ {"id":115,"kind":"StringLiteral","value":"\"MuiChip\""}
+│                                                                             ├─ {"id":116,"kind":"StringLiteral","value":"\"MuiCircularProgress\""}
+│                                                                             ├─ {"id":117,"kind":"StringLiteral","value":"\"MuiCollapse\""}
+│                                                                             ├─ {"id":118,"kind":"StringLiteral","value":"\"MuiContainer\""}
+│                                                                             ├─ {"id":119,"kind":"StringLiteral","value":"\"MuiCssBaseline\""}
+│                                                                             ├─ {"id":120,"kind":"StringLiteral","value":"\"MuiDialog\""}
+│                                                                             ├─ {"id":121,"kind":"StringLiteral","value":"\"MuiDialogActions\""}
+│                                                                             ├─ {"id":122,"kind":"StringLiteral","value":"\"MuiDialogContent\""}
+│                                                                             ├─ {"id":123,"kind":"StringLiteral","value":"\"MuiDialogContentText\""}
+│                                                                             ├─ {"id":124,"kind":"StringLiteral","value":"\"MuiDialogTitle\""}
+│                                                                             ├─ {"id":125,"kind":"StringLiteral","value":"\"MuiDivider\""}
+│                                                                             ├─ {"id":126,"kind":"StringLiteral","value":"\"MuiDrawer\""}
+│                                                                             ├─ {"id":127,"kind":"StringLiteral","value":"\"MuiAccordion\""}
+│                                                                             ├─ {"id":128,"kind":"StringLiteral","value":"\"MuiAccordionActions\""}
+│                                                                             ├─ {"id":129,"kind":"StringLiteral","value":"\"MuiAccordionDetails\""}
+│                                                                             ├─ {"id":130,"kind":"StringLiteral","value":"\"MuiAccordionSummary\""}
+│                                                                             ├─ {"id":131,"kind":"StringLiteral","value":"\"MuiFab\""}
+│                                                                             ├─ {"id":132,"kind":"StringLiteral","value":"\"MuiFilledInput\""}
+│                                                                             ├─ {"id":133,"kind":"StringLiteral","value":"\"MuiFormControl\""}
+│                                                                             ├─ {"id":134,"kind":"StringLiteral","value":"\"MuiFormControlLabel\""}
+│                                                                             ├─ {"id":135,"kind":"StringLiteral","value":"\"MuiFormGroup\""}
+│                                                                             ├─ {"id":136,"kind":"StringLiteral","value":"\"MuiFormHelperText\""}
+│                                                                             ├─ {"id":137,"kind":"StringLiteral","value":"\"MuiFormLabel\""}
+│                                                                             ├─ {"id":138,"kind":"StringLiteral","value":"\"MuiGrid\""}
+│                                                                             ├─ {"id":139,"kind":"StringLiteral","value":"\"MuiGrid2\""}
+│                                                                             ├─ {"id":140,"kind":"StringLiteral","value":"\"MuiImageList\""}
+│                                                                             ├─ {"id":141,"kind":"StringLiteral","value":"\"MuiImageListItem\""}
+│                                                                             ├─ {"id":142,"kind":"StringLiteral","value":"\"MuiImageListItemBar\""}
+│                                                                             ├─ {"id":143,"kind":"StringLiteral","value":"\"MuiIcon\""}
+│                                                                             ├─ {"id":144,"kind":"StringLiteral","value":"\"MuiIconButton\""}
+│                                                                             ├─ {"id":145,"kind":"StringLiteral","value":"\"MuiInput\""}
+│                                                                             ├─ {"id":146,"kind":"StringLiteral","value":"\"MuiInputAdornment\""}
+│                                                                             ├─ {"id":147,"kind":"StringLiteral","value":"\"MuiInputBase\""}
+│                                                                             ├─ {"id":148,"kind":"StringLiteral","value":"\"MuiInputLabel\""}
+│                                                                             ├─ {"id":149,"kind":"StringLiteral","value":"\"MuiLinearProgress\""}
+│                                                                             ├─ {"id":150,"kind":"StringLiteral","value":"\"MuiLink\""}
+│                                                                             ├─ {"id":151,"kind":"StringLiteral","value":"\"MuiList\""}
+│                                                                             ├─ {"id":152,"kind":"StringLiteral","value":"\"MuiListItem\""}
+│                                                                             ├─ {"id":153,"kind":"StringLiteral","value":"\"MuiListItemButton\""}
+│                                                                             ├─ {"id":154,"kind":"StringLiteral","value":"\"MuiListItemAvatar\""}
+│                                                                             ├─ {"id":155,"kind":"StringLiteral","value":"\"MuiListItemIcon\""}
+│                                                                             ├─ {"id":156,"kind":"StringLiteral","value":"\"MuiListItemSecondaryAction\""}
+│                                                                             ├─ {"id":157,"kind":"StringLiteral","value":"\"MuiListItemText\""}
+│                                                                             ├─ {"id":158,"kind":"StringLiteral","value":"\"MuiListSubheader\""}
+│                                                                             ├─ {"id":159,"kind":"StringLiteral","value":"\"MuiMenu\""}
+│                                                                             ├─ {"id":160,"kind":"StringLiteral","value":"\"MuiMenuItem\""}
+│                                                                             ├─ {"id":161,"kind":"StringLiteral","value":"\"MuiMenuList\""}
+│                                                                             ├─ {"id":162,"kind":"StringLiteral","value":"\"MuiMobileStepper\""}
+│                                                                             ├─ {"id":163,"kind":"StringLiteral","value":"\"MuiModal\""}
+│                                                                             ├─ {"id":164,"kind":"StringLiteral","value":"\"MuiNativeSelect\""}
+│                                                                             ├─ {"id":165,"kind":"StringLiteral","value":"\"MuiOutlinedInput\""}
+│                                                                             ├─ {"id":166,"kind":"StringLiteral","value":"\"MuiPagination\""}
+│                                                                             ├─ {"id":167,"kind":"StringLiteral","value":"\"MuiPaginationItem\""}
+│                                                                             ├─ {"id":168,"kind":"StringLiteral","value":"\"MuiPaper\""}
+│                                                                             ├─ {"id":169,"kind":"StringLiteral","value":"\"MuiPopper\""}
+│                                                                             ├─ {"id":170,"kind":"StringLiteral","value":"\"MuiPopover\""}
+│                                                                             ├─ {"id":171,"kind":"StringLiteral","value":"\"MuiRadio\""}
+│                                                                             ├─ {"id":172,"kind":"StringLiteral","value":"\"MuiRadioGroup\""}
+│                                                                             ├─ {"id":173,"kind":"StringLiteral","value":"\"MuiRating\""}
+│                                                                             ├─ {"id":174,"kind":"StringLiteral","value":"\"MuiScopedCssBaseline\""}
+│                                                                             ├─ {"id":175,"kind":"StringLiteral","value":"\"MuiSelect\""}
+│                                                                             ├─ {"id":176,"kind":"StringLiteral","value":"\"MuiSkeleton\""}
+│                                                                             ├─ {"id":177,"kind":"StringLiteral","value":"\"MuiSlider\""}
+│                                                                             ├─ {"id":178,"kind":"StringLiteral","value":"\"MuiSnackbar\""}
+│                                                                             ├─ {"id":179,"kind":"StringLiteral","value":"\"MuiSnackbarContent\""}
+│                                                                             ├─ {"id":180,"kind":"StringLiteral","value":"\"MuiSpeedDial\""}
+│                                                                             ├─ {"id":181,"kind":"StringLiteral","value":"\"MuiSpeedDialAction\""}
+│                                                                             ├─ {"id":182,"kind":"StringLiteral","value":"\"MuiSpeedDialIcon\""}
+│                                                                             ├─ {"id":183,"kind":"StringLiteral","value":"\"MuiStack\""}
+│                                                                             ├─ {"id":184,"kind":"StringLiteral","value":"\"MuiStep\""}
+│                                                                             ├─ {"id":185,"kind":"StringLiteral","value":"\"MuiStepButton\""}
+│                                                                             ├─ {"id":186,"kind":"StringLiteral","value":"\"MuiStepConnector\""}
+│                                                                             ├─ {"id":187,"kind":"StringLiteral","value":"\"MuiStepContent\""}
+│                                                                             ├─ {"id":188,"kind":"StringLiteral","value":"\"MuiStepIcon\""}
+│                                                                             ├─ {"id":189,"kind":"StringLiteral","value":"\"MuiStepLabel\""}
+│                                                                             ├─ {"id":190,"kind":"StringLiteral","value":"\"MuiStepper\""}
+│                                                                             ├─ {"id":191,"kind":"StringLiteral","value":"\"MuiSvgIcon\""}
+│                                                                             ├─ {"id":192,"kind":"StringLiteral","value":"\"MuiSwipeableDrawer\""}
+│                                                                             ├─ {"id":193,"kind":"StringLiteral","value":"\"MuiSwitch\""}
+│                                                                             ├─ {"id":194,"kind":"StringLiteral","value":"\"MuiTab\""}
+│                                                                             ├─ {"id":195,"kind":"StringLiteral","value":"\"MuiTable\""}
+│                                                                             ├─ {"id":196,"kind":"StringLiteral","value":"\"MuiTableBody\""}
+│                                                                             ├─ {"id":197,"kind":"StringLiteral","value":"\"MuiTableCell\""}
+│                                                                             ├─ {"id":198,"kind":"StringLiteral","value":"\"MuiTableContainer\""}
+│                                                                             ├─ {"id":199,"kind":"StringLiteral","value":"\"MuiTableFooter\""}
+│                                                                             ├─ {"id":200,"kind":"StringLiteral","value":"\"MuiTableHead\""}
+│                                                                             ├─ {"id":201,"kind":"StringLiteral","value":"\"MuiTablePagination\""}
+│                                                                             ├─ {"id":202,"kind":"StringLiteral","value":"\"MuiTableRow\""}
+│                                                                             ├─ {"id":203,"kind":"StringLiteral","value":"\"MuiTableSortLabel\""}
+│                                                                             ├─ {"id":204,"kind":"StringLiteral","value":"\"MuiTabs\""}
+│                                                                             ├─ {"id":205,"kind":"StringLiteral","value":"\"MuiTextField\""}
+│                                                                             ├─ {"id":206,"kind":"StringLiteral","value":"\"MuiToggleButton\""}
+│                                                                             ├─ {"id":207,"kind":"StringLiteral","value":"\"MuiToggleButtonGroup\""}
+│                                                                             ├─ {"id":208,"kind":"StringLiteral","value":"\"MuiToolbar\""}
+│                                                                             ├─ {"id":209,"kind":"StringLiteral","value":"\"MuiTooltip\""}
+│                                                                             ├─ {"id":210,"kind":"StringLiteral","value":"\"MuiTouchRipple\""}
+│                                                                             ├─ {"id":211,"kind":"StringLiteral","value":"\"MuiTypography\""}
+│                                                                             └─ {"id":212,"kind":"StringLiteral","value":"\"MuiUseMediaQuery\""}
+└─ Check file [35m/users/yutengjing/code/ts-perf-issue/src/[36msxprops.tsx[39m[35m[39m (538ms)
+   └─ Check deferred node from (line 11, char 9) to (line 18, char 18) (528ms)
+
+No duplicate packages found

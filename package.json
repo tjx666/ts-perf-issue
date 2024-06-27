@@ -1,0 +1,22 @@
+{
+    "name": "ts-perf-issue",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "analyze-ts": "tsc -p . --generateTrace ./dist/ts-trace --incremental false && analyze-trace ./dist/ts-trace"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@9.4.0",
+    "devDependencies": {
+        "@types/react": "^18.3.3",
+        "@typescript/analyze-trace": "^0.10.1",
+        "typescript": "^5.5.2"
+    },
+    "dependencies": {
+        "@mui/material": "^5.15.20",
+        "react": "^18.3.1"
+    }
+}
