@@ -1,14 +1,10 @@
 {
     "name": "ts-perf-issue",
     "version": "1.0.0",
-    "description": "",
     "main": "index.js",
     "scripts": {
-        "analyze-ts": "tsc -p . --generateTrace ./dist/ts-trace --incremental false && analyze-trace ./dist/ts-trace"
+        "analyze-ts": "tsc -p . --generateTrace ./trace --incremental false && analyze-trace ./trace"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
     "packageManager": "pnpm@9.4.0",
     "dependencies": {
         "@mui/lab": "5.0.0-alpha.170",

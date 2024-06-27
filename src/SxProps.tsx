@@ -6,27 +6,15 @@ interface MyButtonProps {
     sx?: SxProps;
 }
 
-function MyButton({ children, sx }: MyButtonProps) {
+export function MyButton({ children, sx }: MyButtonProps) {
     return (
         <Button
             sx={{
-                color: 'primary.main',
+                backgroundColor: 'red',
                 ...sx,
             }}
         >
             {children}
         </Button>
-    );
-}
-
-export function App() {
-    return (
-        <MyButton
-            sx={{
-                backgroundColor: 'primary.main',
-            }}
-        >
-            SxProps without Theme param cause bad ts performance{' '}
-        </MyButton>
     );
 }

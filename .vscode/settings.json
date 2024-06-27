@@ -1,3 +1,10 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib"
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "markdownlint.config": {
+        "default": true,
+        "MD033": false,
+        "MD034": false,
+        "MD041": false,
+        "MD024": false
+    }
 }

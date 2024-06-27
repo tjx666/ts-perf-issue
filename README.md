@@ -13,7 +13,7 @@ then you can check the terminal output or just check file: [analyze-result.txt](
 
 ### [different version of `@mui/system`](./src/differentVersionOfMuiSystem.tsx)
 
-The reason why your project has `@mui/system` is case by case, but we can reproduce this situation like the `package.json` config in this repo:
+The reason why your project has different versions of `@mui/system` is case by case, but we can reproduce this situation like the `package.json` config in this repo:
 
 ```json
 {
@@ -41,8 +41,8 @@ interface MyButtonProps {
 }
 
 export const MyButton = ({ children, sx }: MyButtonProps) => {
-  // the sx prop of LoadingButton is from @mui/system@5.15.15 installed by @mui/lab
-  // the sx prop of MyButton is from @mui/system@5.25.20 installed by @mui/material
+  // the sx prop of LoadingButton is from @mui/system@5.15.15 which is installed by @mui/lab
+  // the sx prop of MyButton is from @mui/system@5.25.20 which is installed by @mui/material
   // compare them will cause significant performance issue
   return <LoadingButton sx={sx}>{children}</LoadingButton>;
 };
@@ -50,7 +50,7 @@ export const MyButton = ({ children, sx }: MyButtonProps) => {
 
 ts trace result:
 
-> Check file /users/yutengjing/code/ts-perf-issue/src/differentversionofmuisystem.tsx (<span style="color: red">9655ms</span>)
+> Check file /users/yutengjing/code/ts-perf-issue/src/differentversionofmuisystem.tsx (<span style="color: red">10154ms</span>)
 
 #### solution
 
@@ -89,11 +89,11 @@ interface MyButtonProps {
   sx?: SxProps;
 }
 
-function MyButton({ children, sx }: MyButtonProps) {
+export function MyButton({ children, sx }: MyButtonProps) {
   return (
     <Button
       sx={{
-        color: 'primary.main',
+        backgroundColor: 'red',
         ...sx,
       }}
     >
@@ -101,32 +101,20 @@ function MyButton({ children, sx }: MyButtonProps) {
     </Button>
   );
 }
-
-export function App() {
-  return (
-    <MyButton
-      sx={{
-        backgroundColor: 'primary.main',
-      }}
-    >
-      SxProps without Theme param cause bad ts performance{' '}
-    </MyButton>
-  );
-}
 ```
 
 ts trace result:
 
-> Check file /users/yutengjing/code/ts-perf-issue/src/sxprops.tsx (<span style="color: red">675ms</span>)
+> Check file /users/yutengjing/code/ts-perf-issue/src/sxprops.tsx (<span style="color: red">526ms</span>)
 
 #### solution
 
 ```ts
 import { SxProps, Theme } from '@mui/material/styles';
 
-// use SxProps with Theme param
 interface MyButtonProps {
   children: ReactNode;
+  // use SxProps with Theme param
   sx?: SxProps<Theme>;
 }
 ```
@@ -152,15 +140,16 @@ export function EditorTheme({ children }: EditorThemeProps) {
 
 ts trace result:
 
-> Check file /users/yutengjing/code/ts-perf-issue/src/createtheme.tsx (<span style="color: red">1568ms</span>)
+> Check file /users/yutengjing/code/ts-perf-issue/src/createtheme.tsx (<span style="color: red">1730ms</span>)
 
-#### solution
+#### solutions
 
 ```ts
-// avoid type check by assertion any
+// avoid type check by assertion any at every place you use it
 const theme = createTheme(baseTheme as any, {});
 
 // or alias it
+// lib/createMuiTheme.ts
 import type { Components, Theme } from '@mui/material/styles';
 import { createTheme } from '@mui/material/styles';
 
@@ -172,7 +161,7 @@ export const createMuiTheme = createTheme as unknown as (
 ) => Theme;
 ```
 
-## Useful VSCode Settings
+## Useful vscode settings
 
 ```jsonc
 {
@@ -182,9 +171,10 @@ export const createMuiTheme = createTheme as unknown as (
   // "typescript.tsserver.nodePath": "node",
 
   // find references maybe slow
-  // "typescript.referencesCodeLens.enabled": false,
+  "typescript.implementationsCodeLens.enabled": false,
+  "typescript.referencesCodeLens.enabled": false,
 
-  // theme modules consist many useless types especially aws-sdk
+  // theme modules contain many useless types especially aws-sdk
   "typescript.preferences.autoImportFileExcludePatterns": [
     "node_modules/@iconify-json",
     "node_modules/@@google-cloud",
@@ -200,7 +190,7 @@ export const createMuiTheme = createTheme as unknown as (
 }
 ```
 
-recommend extension:
+recommend extensions:
 
 - [zardoy.ts-essential-plugins](https://marketplace.visualstudio.com/items?itemName=zardoy.ts-essential-plugins)
 - [tsperf.tracer](https://marketplace.visualstudio.com/items?itemName=tsperf.tracer)
@@ -237,7 +227,7 @@ recommend extension:
 }
 ```
 
-## Useful ESLint Rules
+## Useful ESLint rules
 
 ```javascript
 {
@@ -290,11 +280,11 @@ recommend extension:
 }
 ```
 
-### some related links
+## Some related links
 
-- <https://github.com/mui/material-ui/issues/42772>
-- <https://gist.github.com/casamia918/dafd630a1cdd81935a4587297acaae00>
-- <https://github.com/microsoft/TypeScript/wiki/Performance-Tracing>
-- <https://github.com/microsoft/TypeScript/issues/34801>
-- <https://github.com/microsoft/TypeScript/issues/34801#issuecomment-1679272995>
-- <https://github.com/microsoft/vscode/issues/215427>
+- https://github.com/mui/material-ui/issues/42772
+- https://github.com/microsoft/TypeScript/wiki/Performance-Tracing
+- https://gist.github.com/casamia918/dafd630a1cdd81935a4587297acaae00
+- https://github.com/microsoft/TypeScript/issues/34801#issuecomment-1679272995
+- https://github.com/microsoft/TypeScript/issues/34801
+- https://github.com/microsoft/vscode/issues/215427
