@@ -292,6 +292,7 @@ recommend extension:
 
 ### some related links
 
+- <https://github.com/mui/material-ui/issues/42772>
 - <https://gist.github.com/casamia918/dafd630a1cdd81935a4587297acaae00>
 - <https://github.com/microsoft/TypeScript/wiki/Performance-Tracing>
 - <https://github.com/microsoft/TypeScript/issues/34801>
